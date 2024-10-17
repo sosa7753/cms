@@ -32,9 +32,11 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'org.springframework.data:spring-data-envers'
 
+    // Random 문자열 생성 라이브러리
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+
     // swagger
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.3'
-
 
     compileOnly 'org.projectlombok:lombok'
     testImplementation 'com.h2database:h2'
