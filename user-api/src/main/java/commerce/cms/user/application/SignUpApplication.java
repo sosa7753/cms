@@ -9,7 +9,6 @@ import commerce.cms.user.exception.CustomException;
 import commerce.cms.user.exception.ErrorCode;
 import commerce.cms.user.service.customer.SignUpCustomerService;
 import commerce.cms.user.service.seller.SignUpSellerService;
-import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
