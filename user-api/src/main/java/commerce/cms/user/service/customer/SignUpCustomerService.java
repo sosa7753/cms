@@ -1,4 +1,4 @@
-package commerce.cms.user.service;
+package commerce.cms.user.service.customer;
 
 import static commerce.cms.user.exception.ErrorCode.ALREADY_VERIFY;
 import static commerce.cms.user.exception.ErrorCode.EXPIRE_CODE;
@@ -8,7 +8,7 @@ import static commerce.cms.user.exception.ErrorCode.WRONG_VERIFICATION;
 import commerce.cms.user.domain.SignUpForm;
 import commerce.cms.user.domain.model.Customer;
 import commerce.cms.user.exception.CustomException;
-import commerce.cms.user.repository.CustomerRepository;
+import commerce.cms.user.domain.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Locale;

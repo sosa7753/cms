@@ -1,6 +1,7 @@
 package commerce.cms.user.service;
 
 import commerce.cms.user.domain.SignUpForm;
+import commerce.cms.user.service.customer.SignUpCustomerService;
 import java.time.LocalDate;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
