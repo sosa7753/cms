@@ -1,7 +1,7 @@
-package commerce.cms.user.service;
+package commerce.cms.user.service.customer;
 
 import commerce.cms.user.domain.model.Customer;
-import commerce.cms.user.repository.CustomerRepository;
+import commerce.cms.user.domain.repository.CustomerRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

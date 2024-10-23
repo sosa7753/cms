@@ -2,7 +2,7 @@ package commerce.cms.user.config.filter;
 
 import commerce.cms.domain.config.JwtAuthenticationProvider;
 import commerce.cms.domain.domain.common.UserVo;
-import commerce.cms.user.service.CustomerService;
+import commerce.cms.user.service.customer.CustomerService;
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

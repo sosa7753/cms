@@ -6,7 +6,7 @@ import commerce.cms.user.domain.customer.CustomerDto;
 import commerce.cms.user.domain.model.Customer;
 import commerce.cms.user.exception.CustomException;
 import commerce.cms.user.exception.ErrorCode;
-import commerce.cms.user.service.CustomerService;
+import commerce.cms.user.service.customer.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
