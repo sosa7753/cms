@@ -38,7 +38,7 @@ public class SignUpApplication {
           .from("tester@test.com")
           .to(c.getEmail())
           .subject("Verification Email!!")
-          .text(getVerificationEmailBody(c.getEmail(), c.getName(), "custmoer", code))
+          .text(getVerificationEmailBody(c.getEmail(), c.getName(), "customer", code))
           .build();
       log.info("send Email result : " + mailgunClient.sendMail(sendMailForm));
       signUpCustomerService.changeCustomerValidateEmail(c.getId(), code);
