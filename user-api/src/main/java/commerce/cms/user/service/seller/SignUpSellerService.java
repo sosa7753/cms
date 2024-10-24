@@ -9,11 +9,11 @@ import commerce.cms.user.domain.SignUpForm;
 import commerce.cms.user.domain.model.Seller;
 import commerce.cms.user.domain.repository.SellerRepository;
 import commerce.cms.user.exception.CustomException;
-import jakarta.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
