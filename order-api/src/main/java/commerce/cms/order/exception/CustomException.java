@@ -1,7 +1,10 @@
 package commerce.cms.order.exception;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Getter
@@ -16,6 +19,16 @@ public class CustomException extends RuntimeException {
     super(errorcode.getMessage());
     this.errorCode = errorcode;
     this.status = errorcode.getHttpStatus().value();
+  }
+
+  @Builder
+  @Getter
+  @NoArgsConstructor
+  @AllArgsConstructor
+  public static class CustomExceptionResponse {
+    private int status;
+    private String code;
+    private String message;
   }
 
 
