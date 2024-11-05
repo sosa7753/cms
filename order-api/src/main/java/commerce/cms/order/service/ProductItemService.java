@@ -1,11 +1,13 @@
 package commerce.cms.order.service;
 
+import static commerce.cms.order.exception.ErrorCode.NOT_FOUND_ITEM;
 import static commerce.cms.order.exception.ErrorCode.NOT_FOUND_PRODUCT;
 import static commerce.cms.order.exception.ErrorCode.SAME_ITEM_NAME;
 
 import commerce.cms.order.domain.model.Product;
 import commerce.cms.order.domain.model.ProductItem;
 import commerce.cms.order.domain.product.AddProductItemForm;
+import commerce.cms.order.domain.product.UpdateProductItemForm;
 import commerce.cms.order.domain.repository.ProductItemRepository;
 import commerce.cms.order.domain.repository.ProductRepository;
 import commerce.cms.order.exception.CustomException;
@@ -30,7 +32,20 @@ public class ProductItemService {
     }
 
     ProductItem productItem = ProductItem.of(sellerId, form);
+    productItem.setProduct(product);
     product.getProductItems().add(productItem);
     return product;
+  }
+
+  @Transactional
+  public ProductItem updateProductItem(Long sellerId, UpdateProductItemForm form) {
+    ProductItem productItem = productItemRepository.findById(form.getId())
+        .filter(pi -> pi.getSellerId().equals(sellerId))
+        .orElseThrow(() -> new CustomException(NOT_FOUND_ITEM));
+
+    productItem.setName(form.getName());
+    productItem.setCount(form.getCount());
+    productItem.setPrice(form.getPrice());
+    return productItem;
   }
 }
