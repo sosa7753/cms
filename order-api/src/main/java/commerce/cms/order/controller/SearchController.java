@@ -1,7 +1,5 @@
 package commerce.cms.order.controller;
 
-import commerce.cms.domain.config.JwtAuthenticationProvider;
-import commerce.cms.order.domain.model.Product;
 import commerce.cms.order.domain.product.ProductDto;
 import commerce.cms.order.service.ProductSearchService;
 import java.util.List;
