@@ -40,7 +40,7 @@ public class ProductItem extends BaseEntity {
 
   private Integer count; // 재고
 
-  @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "product_id")
   private Product product;
 
