@@ -2,7 +2,6 @@ package commerce.cms.order.domain.model;
 
 
 import commerce.cms.order.domain.product.AddProductItemForm;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
