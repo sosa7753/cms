@@ -1,9 +1,7 @@
 package commerce.cms.order.application;
 
 import static commerce.cms.order.exception.ErrorCode.ITEM_COUNT_NOT_ENOUGH;
-import static commerce.cms.order.exception.ErrorCode.NOT_FOUND_PRODUCT;
 
-import commerce.cms.order.client.RedisClient;
 import commerce.cms.order.domain.model.Product;
 import commerce.cms.order.domain.model.ProductItem;
 import commerce.cms.order.domain.product.AddProductCartForm;
@@ -115,7 +113,6 @@ public class CartApplication {
         cart.getProducts().remove(cartProduct);
         cart.addMessage(cartProduct.getName() + " 상품의 옵션이 모두 없어져 구매가 불가능합니다.");
         i--;
-        continue;
       } else if (!tmpMessages.isEmpty()) {
         StringBuilder sb = new StringBuilder();
         sb.append(cartProduct.getName()).append(" 상품의 변동사항 : ");
