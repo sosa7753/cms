@@ -4,6 +4,7 @@ import commerce.cms.order.client.RedisClient;
 import commerce.cms.order.domain.product.AddProductCartForm;
 import commerce.cms.order.domain.redis.Cart;
 import commerce.cms.order.domain.redis.Cart.ProductItem;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -70,7 +71,15 @@ public class CartService {
       redisClient.put(customerId, cart);
       return cart;
     }
-    redisClient.put(customerId, cart);
+    deleteMessageSave(cart);
     return cart;
+  }
+
+  private void deleteMessageSave(Cart cart) {
+    Cart saveCart = new Cart();
+    saveCart.setCustomerId(cart.getCustomerId());
+    saveCart.setProducts(cart.getProducts());
+    saveCart.setMessages(new ArrayList<>());
+    redisClient.put(cart.getCustomerId(), saveCart);
   }
 }
