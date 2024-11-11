@@ -32,6 +32,13 @@ public class CartApplication {
     return cartService.addCart(customerId, form);
   }
 
+  public Cart updateCart(Long customerId, Cart cart) {
+    // 실질적으로 변하는 데이터
+    // 상품의 삭제, 수량 변경
+    cartService.putCart(customerId, cart);
+    return getCart(customerId);
+  }
+
   /**
    * 1. 장바구니에 상품을 추가했다.
    * 2. 상품의 가격이나 수량이 변동된다.
@@ -141,6 +148,9 @@ public class CartApplication {
     return form.getItems().stream().noneMatch( // 하나라도 조건에 부합하면 false
         formItem -> {
           Integer cartCount = cartItemCountMap.get(formItem.getId());
+          if(cartCount == null) {
+            cartCount = 0;
+          }
           Integer currentCount = currentItemCountMap.get(formItem.getId());
           return formItem.getCount()+cartCount > currentCount;
         });
