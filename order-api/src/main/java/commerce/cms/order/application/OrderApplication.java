@@ -1,6 +1,7 @@
 package commerce.cms.order.application;
 
-import static commerce.cms.order.exception.ErrorCode.*;
+import static commerce.cms.order.exception.ErrorCode.ORDER_FAIL_CHECK_CART;
+import static commerce.cms.order.exception.ErrorCode.ORDER_FAIL_NO_MONEY;
 
 import commerce.cms.order.client.UserClient;
 import commerce.cms.order.client.user.ChangeBalanceForm;
@@ -8,7 +9,6 @@ import commerce.cms.order.client.user.CustomerDto;
 import commerce.cms.order.domain.model.ProductItem;
 import commerce.cms.order.domain.redis.Cart;
 import commerce.cms.order.exception.CustomException;
-import commerce.cms.order.exception.ErrorCode;
 import commerce.cms.order.service.ProductItemService;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
